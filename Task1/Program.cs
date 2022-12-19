@@ -23,15 +23,15 @@ int GetNaturalNumber (string numStr)
     return num;
 }
 
-//запросить целое число
-int GetNumber (string numStr)
+//запросить число
+double GetNumber (string numStr)
 {
     bool isNum = false;
-    int num = 0;
+    double num = 0;
 
     while (!isNum)
     {   
-        if (int.TryParse(numStr, out num))
+        if (double.TryParse(numStr, out num))
             isNum = true;
         else 
         {
@@ -42,11 +42,11 @@ int GetNumber (string numStr)
     return num;
 }
 
-//Ввод массива целых чисел с клавиатуры
-int[] InitUserArray(int length)
+//Ввод массива чисел с клавиатуры
+double[] InitUserArray(int length)
 {
-    int[] array = new int[length];
-    int number = 0;
+    double[] array = new double[length];
+    double number = 0;
 
     for (int i = 0; i < length; i++)
     {
@@ -59,7 +59,7 @@ int[] InitUserArray(int length)
 }
 
 //распечатать массив на консоль 
-void PrintArray(int[] array)
+void PrintArray(double[] array)
 {
     for (int i = 0; i < array.Length; i++)
     {
@@ -70,13 +70,13 @@ void PrintArray(int[] array)
 }
 
 //подсчет отрицательных чисел в массиве
-int CountNegativeInArray(int[] array)
+int CountPositiveInArray(double[] array)
 {
     int count = 0;
 
     for (int i = 0; i < array.Length; i++)
     {
-        if (array[i] < 0)
+        if (array[i] >= 0)
             count ++;
     }
     return count;
@@ -86,8 +86,8 @@ Console.WriteLine("Сколько чисел Вы хотите ввести?");
 int countNum =  GetNaturalNumber(Console.ReadLine() ?? "");
 Console.WriteLine("");
 
-int[] arrayNum = InitUserArray(countNum);
+double[] arrayNum = InitUserArray(countNum);
 Console.WriteLine("");
 PrintArray(arrayNum);
 
-Console.WriteLine($"среди введенных чисел {CountNegativeInArray(arrayNum)} отрицательных");
+Console.WriteLine($"среди введенных чисел {CountPositiveInArray(arrayNum)} положительных");
