@@ -70,7 +70,7 @@ void PrintArray(int[] array)
 }
 
 //подсчет отрицательных чисел в массиве
-int CounеNegativeInArray(int[] array)
+int CountNegativeInArray(int[] array)
 {
     int count = 0;
 
@@ -90,4 +90,4 @@ int[] arrayNum = InitUserArray(countNum);
 Console.WriteLine("");
 PrintArray(arrayNum);
 
-Console.WriteLine($"среди введенных чисел {CounеNegativeInArray(arrayNum)} отрицательных");
+Console.WriteLine($"среди введенных чисел {CountNegativeInArray(arrayNum)} отрицательных");
